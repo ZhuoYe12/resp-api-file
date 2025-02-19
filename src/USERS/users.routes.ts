@@ -157,36 +157,3 @@
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({error})
         }
     })
-
-    //Doesn't work for some reason, returns all users instead of specific ones
-    /* 
-    userRouter.get("/users/search", async (req: Request, res: Response) => {
-        try {
-          const { name, email } = req.query;
-      
-          if (name) {
-            const user = await database.findByName(name.toString());
-            if (!user) {
-              return res.status(StatusCodes.NOT_FOUND).json({ error: 'User not found' });
-            }
-            return res.status(StatusCodes.OK).json({ user });
-          }
-      
-          if (email) {
-            const user = await database.findbyEmail(email.toString());
-            if (!user) {
-              return res.status(StatusCodes.NOT_FOUND).json({ error: 'User not found' });
-            }
-            return res.status(StatusCodes.OK).json({ user });
-          }
-      
-        
-          return res.status(StatusCodes.BAD_REQUEST).json({ error: 'Please provide name or email query parameter' });
-      
-        } catch (error) {
-          return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error });
-        }
-      });
-*/
-      
-

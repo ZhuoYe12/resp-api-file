@@ -76,19 +76,6 @@ export const searchUsers = async (name: string, email: string): Promise<UnitUser
 
     return filteredUsers;
 };
-/*
-export const findByName = async (user_name: string): Promise<UnitUser | null> => {
-    const allUsers = await findAll();
-
-    const getUser = allUsers.find(result => user_name === result.username);
-
-    if (!getUser) {
-        return null;
-    }
-
-    return getUser;
-};
-*/
 
 export const findbyEmail= async (user_email:string): Promise<UnitUser | null> => {
     const allUsers = await findAll();
